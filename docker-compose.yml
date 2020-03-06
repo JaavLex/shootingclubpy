@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  web:
+    build:
+      ./
+    links:
+      - db
+    ports:
+      - "82:80"
+    restart: always
+    volumes:
+      - ${PWD}:/app
+    security_opt:
+      - seccomp:unconfined
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Pomme
+      MYSQL_DATABASE: shootingclub
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8888:8080
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8889:80
+    environment:
+      MYSQL_ROOT_PASSWORD: Pomme
