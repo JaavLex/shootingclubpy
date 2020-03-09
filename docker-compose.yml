@@ -14,7 +14,7 @@ services:
     # security_opt:
     #   - seccomp:unconfined
   db:
-    image: mysql
+    image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
