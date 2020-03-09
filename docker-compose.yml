@@ -9,8 +9,8 @@ services:
     ports:
       - "82:80"
     restart: always
-    # volumes:
-    #   - ${PWD}:/app
+    volumes:
+      - ${PWD}/web:/app
     # security_opt:
     #   - seccomp:unconfined
   db:

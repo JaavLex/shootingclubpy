@@ -17,5 +17,7 @@
 
 
 FROM tiangolo/uwsgi-nginx:python3.7
-COPY ./app /app
+ENV STATIC_URL /static
+ENV STATIC_PATH /app/app/static
+#COPY ./web /app
 RUN pip install flask flask_restful

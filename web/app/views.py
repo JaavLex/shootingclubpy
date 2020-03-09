@@ -5,6 +5,10 @@ from app import app
 def home():
     return "Hello world!"
 
-@app.route('/template')
+@app.route('/api')
+def api():
+    return {'hello': 'world'}
+
+@app.route('/html')
 def template():
     return render_template('home.html')
