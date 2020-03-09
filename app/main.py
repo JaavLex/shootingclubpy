@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template("./templates/home.html")
-
+    return "Hello Alex2 World from Flask in a uWSGI Nginx Docker container with \
+     Python 3.7 (from the example template)"
 
 if __name__ == "__main__":
     # Only for debugging while developing

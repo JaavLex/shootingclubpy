@@ -7,10 +7,10 @@ services:
     links:
       - db
     ports:
-      - "82:80"
+      - "8882:80"
     restart: always
-    # volumes:
-    #   - ${PWD}:/app
+    volumes:
+      - ./app:/app
     # security_opt:
     #   - seccomp:unconfined
   db:
