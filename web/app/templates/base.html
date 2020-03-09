@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>This is the default title</title>
+    {% endif %}
+  </head>
+
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>
