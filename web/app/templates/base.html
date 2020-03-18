@@ -1,14 +1,16 @@
 <!doctype html>
-
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Welcome home</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>This is the default title</title>
+    {% endif %}
   </head>
 
   <body>
-    <h1>Home Page</h1>
-    <p>This is the home page of our application.</p>
+    {% block content %}{% endblock %}
   </body>
 </html>

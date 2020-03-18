@@ -17,5 +17,8 @@
 
 
 FROM tiangolo/uwsgi-nginx:python3.7
-COPY ./app /app
-RUN pip install flask flask_restful
+ENV STATIC_URL /static
+ENV STATIC_PATH /app/app/static
+#COPY ./web /app
+#RUN apt update && apt install -y libmysqlclient-dev
+RUN pip install flask flask_restful flask-sqlalchemy mysqlclient

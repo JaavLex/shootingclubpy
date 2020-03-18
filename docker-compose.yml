@@ -7,14 +7,14 @@ services:
     links:
       - db
     ports:
-      - "8882:80"
+      - "82:80"
     restart: always
     volumes:
-      - ./app:/app
+      - ${PWD}/web:/app
     # security_opt:
     #   - seccomp:unconfined
   db:
-    image: mysql
+    image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
