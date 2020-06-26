@@ -1,6 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Hello World</h1>
-  <p>This is the a HTML template.</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+<div id="bg-image">
+  <div id="block-container">
+    <form action="./php/postformsql.php" method="post" autocomplete="off">
+      <table class="mainform">
+        <tr>
+          <div class="form__group">
+            <td>
+              <h2>S'enregistrer</h2><input type="text" name="last_name" class="form__field" placeholder="Nom" id="name" required></input>
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <td><input type="text" name="first_name" class="form__field" placeholder="Prénom" id="firstname" required></input></td>
+        </tr>
+        <tr>
+          <td><input type="date" name="date_of_birth" class="form__field" placeholder="Date de naissance" id="dateofbirth" required></input></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="select-switch">
+              <label class="block-holder">Detenteur d'arme?
+                <input type="radio" id="radio-yes" name="wp_yesno" value="Y"></input>
+                <label for="radio-yes"> Oui </label>
+                <input type="radio" id="radio-no" name="wp_yesno" value="N"></input>
+                <label for="radio-no"> Non </label>
+              </label>
+            </div>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Submit" />
+          </td>
+          <td>
+          <td><input type="button" value="Liste des gens" onclick="parent.location='php/peoplelist.php'"> </input></td>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+
+</html>
 {% endblock %}

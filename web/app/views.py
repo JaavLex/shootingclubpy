@@ -10,12 +10,12 @@ def default():
 def api():
   return {'hello': 'world'}
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
   return render_template('home.html', title='Hello World')
 
 @app.route('/user')
 def user():
-  users = Users.query.order_by(Users.username.asc()).all()
+  users = Users.query.order_by(Users.nom_pers.asc()).all()
   return render_template('users.html', title='User', users=users)
   #return '<pre>'+' '.join([str(elem) for elem in users])

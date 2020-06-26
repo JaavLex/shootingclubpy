@@ -1,20 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Users list</h1>
+<h1>Users list 1151</h1>
   <ul>
   <!-- For loop logic of jinja template -->
   {%for u in users %}
-    <li class="{{ loop.cycle('odd', 'even') }}">
+    <li>
       👤
-      #{{ u.user }} {{ u.first_name }} {{ u.last_name }}
-      {% if u.gender == 'F' %}
-        (♀)
+      #{{ u.id_personne }} {{ u.prenom_pers }} {{ u.nom_pers }}
+      {% if u.possession_arme == 1 %}
+        (🔫)
       {% endif %}
-      {% if u.gender == 'M' %}
-        (♂)
+      {% if u.possession_arme == 0 %}
+        (❌ )
       {% endif %}
-      <a href="mailto:{{ u.email }}">@{{ u.username }}</a>
-      (🎂 {{ u.birth_date }})
+      (🎂 {{ u.date_de_naissance }})
     </li>
   {%endfor%}
   </ul>

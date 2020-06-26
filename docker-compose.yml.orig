@@ -7,10 +7,14 @@ services:
     links:
       - db
     ports:
-      - "82:80"
+      - "8882:80"
     restart: always
     volumes:
+<<<<<<< HEAD
+      - ./app:/app
+=======
       - ${PWD}/web:/app
+>>>>>>> 0c40a3fc4033657db2fe0b3105d854666189b192
     # security_opt:
     #   - seccomp:unconfined
   db:
@@ -19,11 +23,11 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Pomme
-      MYSQL_DATABASE: JAVET_ALEXANDRE_SHOOTINGCLUB_BD_104
+      MYSQL_DATABASE: shootingclub
     volumes:
       - ${PWD}/db:/docker-entrypoint-initdb.d
-    ports:
-      - 33060:3306
+    # ports:
+    #   - 3306:3306
   adminer:
     image: adminer
     restart: always
